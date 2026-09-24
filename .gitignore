@@ -1,0 +1,21 @@
+node_modules/
+web/dist/
+web/src/wasm/
+rust/target/
+build/
+test-results/
+*.wav
+!test-audio/README.md
+
+# Local artifacts and separate native plugin repository
+deliverables/
+vst3/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+*.log
+*.mp4
+*.mp3
+.DS_Store

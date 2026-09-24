@@ -1,0 +1,8 @@
+import type {Patch} from './model';
+export const expandedBranches=['chorus','flanger','crusher','freeze','tremolo','autopan'];
+export const audibleBranches=['glitch','delay','filter','wavefolder','vca','delay2',...expandedBranches];
+export const expandedParameters:Record<number,string>={66:'chorus.rate',67:'chorus.depth',68:'mixer.chorus',69:'flanger.rate',70:'flanger.depth',71:'mixer.flanger',72:'crusher.bits',73:'crusher.rate',74:'mixer.crusher',75:'freeze.hold',77:'mixer.freeze',78:'tremolo.rate',79:'tremolo.depth',80:'mixer.tremolo',81:'autopan.rate',82:'autopan.depth',83:'mixer.autopan',84:'envelope.depth',85:'envelope.release'};
+export const expansionDefaults:Record<string,number>={'chorus.rate':.06,'chorus.depth':.5,'mixer.chorus':0,'flanger.rate':.025,'flanger.depth':.7,'mixer.flanger':0,'crusher.bits':.45,'crusher.rate':.025,'mixer.crusher':0,'freeze.hold':0,'mixer.freeze':0,'tremolo.rate':.2,'tremolo.depth':.9,'mixer.tremolo':0,'autopan.rate':.12,'autopan.depth':1,'mixer.autopan':0,'envelope.depth':.8,'envelope.release':.5};
+export function expansionMask(p:Patch){const has=(a:string,b:string)=>p.routes.some(r=>r[0]===a&&r[1]===b);return (has('mixer','out')?expandedBranches.reduce((m,b,i)=>m|(has('sample',b)&&has(b,'mixer')?1<<i:0),0):0)|(p.modulation.some(([s,t])=>s==='envelope'&&t==='filter.cutoff')?64:0);}
+export function performanceMasks(p:Patch){const ids=[...audibleBranches,'dry'];return {mute:ids.reduce((m,id,i)=>m|(p.mute?.[id]?1<<i:0),0),solo:ids.reduce((m,id,i)=>m|(p.solo?.[id]?1<<i:0),0)};}
+export function requiresExpansion(p:Patch){return !!expansionMask(p)||Object.values(p.mute??{}).some(Boolean)||Object.values(p.solo??{}).some(Boolean);}

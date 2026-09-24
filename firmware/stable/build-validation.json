@@ -1,0 +1,15 @@
+{
+  "timing": {
+    "Setup": 0,
+    "Hold": 0
+  },
+  "sha256": "adcd8ecdfa6d671aaf86671159a24c0c3b8afdb99148b025418bac6149804247",
+  "logic": 19384,
+  "cls": 10013,
+  "bsram": 38,
+  "dsp": 23,
+  "web_tests": 66,
+  "rtl_simulation": "not run - Windows application control blocks Icarus",
+  "physical_turn_test": "pending user",
+  "artifact": "deliverables\\celeste_line_in_encoder_banks.fs"
+}

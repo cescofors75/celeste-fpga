@@ -1,0 +1,7 @@
+{
+  "format": "celeste-patch", "version": 1, "name": "Parallel Dreams",
+  "routes": [["sample","glitch"],["sample","delay"],["sample","filter"],["glitch","mixer"],["delay","mixer"],["filter","mixer"],["sample","mixer"],["mixer","out"]],
+  "parameters": {"glitch.amount":0.72,"glitch.probability":0.34,"delay.time":0.46,"delay.feedback":0.42,"filter.cutoff":0.35,"filter.resonance":0.61,"wavefolder.drive":0.68,"vca.level":0.75,"lfo.depth":0.25,"lfo.rate":0.24,"chaos.amount":0.8,"mixer.dry":0.2,"mixer.glitch":0.7,"mixer.delay":0.4,"mixer.filter":0.6,"mixer.wavefolder":0,"mixer.vca":0,"mixer.master":1},
+  "hardware":{"encoder1":"glitch.amount","encoder2":"glitch.probability","encoder3":"filter.cutoff","encoder4":"filter.resonance","encoder5":"delay.time","encoder6":"delay.feedback","encoder7":"lfo.rate","encoder8":"mixer.master"},
+  "modulation":[], "touch":{"short":"next-page","long":"mutate","double":"hold"}
+}

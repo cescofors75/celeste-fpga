@@ -1,0 +1,112 @@
+{
+  "colors": {
+    "sample": "#b9d3df",
+    "glitch": "#ff527c",
+    "delay": "#35a8ff",
+    "delay2": "#5bcfff",
+    "filter": "#ffa53d",
+    "wavefolder": "#fa66bf",
+    "vca": "#ac78ff",
+    "mixer": "#b9d3df",
+    "out": "#b9d3df",
+    "lfo": "#00dfa2",
+    "chaos": "#aa71ff",
+    "chorus": "#45d8ff",
+    "flanger": "#688aff",
+    "crusher": "#ffa05c",
+    "freeze": "#74ebdf",
+    "tremolo": "#e4b6ff",
+    "autopan": "#bd89ff",
+    "envelope": "#e9d66f"
+  },
+  "parameters": {
+    "glitch": [
+      0,
+      1,
+      7,
+      23,
+      29,
+      30
+    ],
+    "delay": [
+      2,
+      3,
+      8
+    ],
+    "delay2": [
+      24,
+      25,
+      26
+    ],
+    "filter": [
+      4,
+      5,
+      9,
+      28
+    ],
+    "lfo": [
+      11,
+      12
+    ],
+    "wavefolder": [
+      13,
+      16
+    ],
+    "vca": [
+      14,
+      17
+    ],
+    "chaos": [
+      15,
+      31
+    ],
+    "chorus": [
+      66,
+      67,
+      68
+    ],
+    "flanger": [
+      69,
+      70,
+      71
+    ],
+    "crusher": [
+      72,
+      73,
+      74
+    ],
+    "freeze": [
+      75,
+      77
+    ],
+    "tremolo": [
+      78,
+      79,
+      80
+    ],
+    "autopan": [
+      81,
+      82,
+      83
+    ],
+    "envelope": [
+      84,
+      85
+    ]
+  },
+  "branches": [
+    "mixer",
+    "glitch",
+    "delay",
+    "filter",
+    "wavefolder",
+    "vca",
+    "delay2",
+    "chorus",
+    "flanger",
+    "crusher",
+    "freeze",
+    "tremolo",
+    "autopan"
+  ]
+}

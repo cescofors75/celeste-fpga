@@ -1,0 +1,24 @@
+`timescale 1ns/1ps
+module tb_chaos_buffer4;
+ reg clk=0,rst=1,valid=0,raw=0,bypass=0;always #5 clk=~clk;
+ reg signed [15:0] l=0,r=0;wire signed [15:0] ol,orr;wire done;wire [31:0] late,guards;
+ reg [31:0] input_frames[0:23999],expected[0:23999];integer i,cycles;
+ chaos_buffer4 dut(clk,rst,valid,l,r,16'hffff,16'h8000,16'hffff,raw,bypass,ol,orr,done,late,guards);
+ initial begin
+  $readmemh("build/chaos-reference/input.hex",input_frames);
+  $readmemh("build/chaos-reference/expected.hex",expected);
+  repeat(4)@(negedge clk);rst=0;
+  for(i=0;i<24000;i=i+1)begin
+   if(i==12000)begin rst=1;repeat(3)@(negedge clk);rst=0;raw=1;end
+   l=input_frames[i][15:0];r=input_frames[i][31:16];valid=1;
+   @(negedge clk);valid=0;cycles=0;
+   while(!done&&cycles<32)begin @(negedge clk);cycles=cycles+1;end
+   if(!done||cycles>24)$fatal(1,"Missed deadline at frame %0d",i);
+   if({orr,ol}!==expected[i])$fatal(1,"Reference mismatch frame %0d got %h expected %h",i,{orr,ol},expected[i]);
+   if(late!=0||guards!=0)$fatal(1,"Unexpected fault");
+   repeat(256-cycles-1)@(negedge clk);
+  end
+  $display("PASS CBM-4 integer reference 24000 stereo frames, RAW/XFADE, deadline");$finish;
+ end
+ initial begin #70000000;$fatal(1,"timeout");end
+endmodule

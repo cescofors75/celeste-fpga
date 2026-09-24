@@ -1,0 +1,41 @@
+{
+  "operation": "external flash erase program verify; reboot from flash",
+  "sha256": "adcd8ecdfa6d671aaf86671159a24c0c3b8afdb99148b025418bac6149804247",
+  "before": {
+    "rate": 48000,
+    "capacity": 16,
+    "fill": 0,
+    "underruns": 0,
+    "overruns": 0,
+    "samples": 560939,
+    "errors": 0,
+    "engines": 63,
+    "routes": 1,
+    "capabilities": 59391,
+    "running": 1
+  },
+  "after": {
+    "rate": 48000,
+    "capacity": 16,
+    "fill": 0,
+    "underruns": 0,
+    "overruns": 0,
+    "samples": 1042321,
+    "errors": 0,
+    "engines": 63,
+    "routes": 1,
+    "capabilities": 59391,
+    "running": 1
+  },
+  "clock": [
+    255,
+    256,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "physical_power_cycle": false
+}

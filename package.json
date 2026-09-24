@@ -1,0 +1,26 @@
+{
+  "name": "celeste-fpga",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite web --host 127.0.0.1",
+    "build": "node scripts/generate-palette.mjs --check && tsc --noEmit -p web && vite build web",
+    "wasm": "node scripts/tooling.mjs wasm",
+    "test": "vitest run",
+    "test:rust": "node scripts/tooling.mjs rust",
+    "test:browser": "node scripts/test-browser.mjs",
+    "test:rtl": "node scripts/tooling.mjs rtl",
+    "test:audio": "node scripts/run-audio-audit.mjs",
+    "test:all": "node scripts/run-audit.mjs",
+    "test:palette": "node scripts/generate-palette.mjs --check && vitest run web/src/palette.test.ts && node scripts/test-palette-browser.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/w3c-web-serial": "^1.0.8",
+    "agent-browser": "^0.20.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7",
+    "vitest": "^4.1.11"
+  }
+}

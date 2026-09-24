@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-24",
+  "capabilities": 59391,
+  "sample_rate": 48000,
+  "firmware": "celeste-line-in-2026-09-24.fs",
+  "sha256": "adcd8ecdfa6d671aaf86671159a24c0c3b8afdb99148b025418bac6149804247",
+  "resources": {
+    "logic_cells": 19384,
+    "available_logic_cells": 20736,
+    "bsram": 38,
+    "available_bsram": 46,
+    "dsp": 23,
+    "available_dsp": 24
+  },
+  "timing_violations": {
+    "setup": 0,
+    "hold": 0
+  },
+  "flash": "external SPI erase/program/verify PASS; boot from flash PASS",
+  "source_checkpoint": "source-checkpoint-2026-09-24.zip",
+  "limits": [
+    "ADC clock losses have recurred intermittently; root cause not established",
+    "Analog output not captured or measured",
+    "Live demo source comes from PC analog output into PCM1808",
+    "Working tree includes separate experimental targets; stable bitstream is the checksum-pinned artifact"
+  ]
+}
