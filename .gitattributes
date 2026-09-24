@@ -1,2 +1,2 @@
-firmware/stable/*.fs -text
+firmware/stable/*.fs binary
 *.zip binary
